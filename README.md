@@ -47,8 +47,8 @@ voir avec le propriétaire du github
 
  * **setuptools** -> gestion de l’installation et autres tâches liées [info](https://en.wikipedia.org/wiki/Setuptools)  
 utile dès que l’application a d’autres dépendances que la [librairie standard python](https://docs.python.org/3/library/index.html)
- * **venv** -> environnement virtuel pour python [info](https://docs.python.org/3/library/venv.html)
-utilité : conserver les logiciels (dépendances notamment) et leur version (version python par exemple) dans un environnement séparé de l’OS
+ * **venv** -> environnement virtuel pour python [info](https://docs.python.org/3/library/venv.html)  
+utilité : conserver les logiciels (dépendances notamment) et leur version (version python par exemple) dans un environnement séparé de l’OS  
 En cas de mise à jour, l’environnement de développement n’est pas modifié.
 
 ## Dépendences
