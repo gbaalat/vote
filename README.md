@@ -82,13 +82,13 @@ on peut modifier :
 versions (git) et ne seront donc pas hébergés → [exemple](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
 ## Autre fichiers
-* **README.md** -> le présent fichier markdown [info](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f)
+* **README.md** -> le présent fichier markdown [readme](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f)
 permet de présenter le projet avec un guide d’installation, de la documentation etc.
-* **__init__.py** -> [info](https://docs.python.org/3/reference/import.html#regular-packages) et [package_vs_module](https://pythongeeks.org/python-modules-vs-packages/)
+* **__init__.py** -> [info](https://docs.python.org/3/reference/import.html#regular-packages) et [package_vs_module](https://pythongeeks.org/python-modules-vs-packages/)  
 principe en python :
     - on met des fonctions dans un fichier .py appelé module
-    - on met des modules dans un dossier appelé package
-\__init__.py permet de marquer le dossier dans lequel il se trouve comme un package
-il est exécuté à chaque import d’un module de ce package
+    - on met des modules dans un dossier appelé package  
+\__init__.py permet de marquer le dossier dans lequel il se trouve comme un package  
+il est exécuté à chaque import d’un module de ce package  
 \__init__.py peut être vide (juste présent comme marqueur de package) ou contenir du
 code d’initialisation (chargement de la config, connexion à la base de données etc ...)
