@@ -5,7 +5,7 @@ vote en ligne : projet de terminale NSI à l'Immaculée Conception de Pau
 ## installation en mode développement
 
 ### mise à jour du système
-`sudo apt update`
+`sudo apt update`  
 `sudo apt upgrade`
 
 ### récupérer un token github
@@ -32,8 +32,7 @@ voir avec le propriétaire du github
 
 * `python3 -m venv venv --prompt vote`  pour le créer
 * `source venv/bin/activate` pour l'activer
-Maj des outils de packaging:
-* `pip install --upgrade pip setuptools wheel`
+* `pip install --upgrade pip setuptools wheel` maj des outils de packaging
 
 ### config git
 * `git init`
@@ -46,55 +45,49 @@ Maj des outils de packaging:
 
 ## Outils
 
-* setuptools Right gestion de l’installation et autres tâches liées info
-utile dès que l’application a d’autres dépendances que la librairie standard python.
-* venv Right environnement virtuel pour python info
-utilité : conserver les logiciels (dépendances notamment) et leur version (version
-python par exemple) dans un environnement séparé de l’OS
+ * **setuptools** -> gestion de l’installation et autres tâches liées [info](https://en.wikipedia.org/wiki/Setuptools)  
+utile dès que l’application a d’autres dépendances que la [librairie standard python](https://docs.python.org/3/library/index.html)
+ * **venv** -> environnement virtuel pour python [info](https://docs.python.org/3/library/venv.html)
+utilité : conserver les logiciels (dépendances notamment) et leur version (version python par exemple) dans un environnement séparé de l’OS
 En cas de mise à jour, l’environnement de développement n’est pas modifié.
 
 ## Dépendences
-* **Pytest** : framework facilitant l’écriture de tests → info
-* **python-dotenv** → ce package permet à notre application de changer la configuration
+ * **Pytest** -> framework facilitant l’écriture de tests  [info](https://docs.pytest.org/en/7.1.x/)
+ * **python-dotenv** -> ce package permet à notre application de changer la configuration
 automatiquement (variables d’environnement) à partir d’un fichier .env
-* **Black** code formatter → info
+ * **Black** (code formatter) -> [info](https://github.com/psf/black)
 black file ou black repo modifie en place les fichiers python en imposant un style
-uniforme (espaces, commentaires, sauts de ligne etc...) → cf codeStyle
-* **Flake8** linter (outil d’analyse statique du code)→ info
-l’outil signale des erreurs / warnings pour des bugs potentiels, constructions suspectes
-etc....
+uniforme (espaces, commentaires, sauts de ligne etc...) → cf [codeStyle](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)
+* **Flake8** (linter, i.e. outil d’analyse statique du code) -> [info](https://flake8.pycqa.org/en/latest/user/index.html)
+l’outil signale des erreurs / warnings pour des bugs potentiels, constructions suspectes etc....
 * **Flask-SQLAlchemy** ORM pour Flask
-* **Flask-Migrate**
-Au fil du développement, la base de données peut avoir besoin d’évoluer
-Après modification des classes SQLAlchemy (représentant les tables), cet outil
-permettra la migration de la base de données sous-jacente.
+* **Flask-Migrate** -> Au fil du développement, la base de données peut avoir besoin d’évoluer  
+Après modification des classes SQLAlchemy (représentant les tables), cet outil permettra la migration de la base de données sous-jacente.
 
 ## fichiers de Config
-* **.env** → ce fichier ne doit pas être envoyé à l’hébergeur (via git par exemple)
-FLASK_APP=run.py chemin vers l’application info
-FLASK_ENV=development active le debugger automatiquement info
-SECRET_KEY="à modifier" pour la signature crypto info
-* **config.py**
-configuration développement/tests/production pour notre application
-* **pyproject.toml** → fichier de configuration
+* **.env** -> ce fichier ne doit pas être envoyé à l’hébergeur (via git par exemple)
+FLASK_APP=run.py chemin vers l’application [info](https://flask.palletsprojects.com/en/1.0.x/cli/#application-discovery)
+FLASK_ENV=development active le debugger automatiquement [info](https://flask.palletsprojects.com/en/1.0.x/config/#environment-and-debug-features)
+SECRET_KEY="à modifier" pour la signature crypto [info](https://flask.palletsprojects.com/en/1.0.x/config/#SECRET_KEY)
+* **config.py** -> configuration développement/tests/production pour notre application
+* **pyproject.toml** -> fichier de configuration
 utilisé ici pour Black (code formatter)
-
 on peut modifier :
-- line-length : nombre de caractères autorisés sur une ligne de code
-- target-version : version python
-- include / exclude : expressions régulières déterminant les fichiers à formater
-* **pytest.ini** → configuration du framework de test pytest
-* **setup.py** → configuration pour setuptools exemple documenté
+     - line-length : nombre de caractères autorisés sur une ligne de code
+     - target-version : version python
+     - include / exclude : expressions régulières déterminant les fichiers à formater
+* **pytest.ini** -> configuration du framework de test pytest
+* **setup.py** -> configuration pour setuptools [exemple documenté](https://github.com/pypa/sampleproject/blob/main/setup.py)
+* **.gitignore** -> liste les fichiers / dossiers qui ne seront pas pris en compte par le gestionnaire de
+versions (git) et ne seront donc pas hébergés → [exemple](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
 ## Autre fichiers
-* **README.md** file → info
+* **README.md** -> le présent fichier markdown [info](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f)
 permet de présenter le projet avec un guide d’installation, de la documentation etc.
-* **.gitignore** liste les fichiers / dossiers qui ne seront pas pris en compte par le gestionnaire de
-versions (git) et ne seront donc pas hébergés → exemple
-* **__init__.py** → info et package_vs_module
+* **__init__.py** -> [info](https://docs.python.org/3/reference/import.html#regular-packages) et [package_vs_module](https://pythongeeks.org/python-modules-vs-packages/)
 principe en python :
-- on met des fonctions dans un fichier .py appelé module
-- on met des modules dans un dossier appelé package
+    - on met des fonctions dans un fichier .py appelé module
+    - on met des modules dans un dossier appelé package
 \__init__.py permet de marquer le dossier dans lequel il se trouve comme un package
 il est exécuté à chaque import d’un module de ce package
 \__init__.py peut être vide (juste présent comme marqueur de package) ou contenir du
