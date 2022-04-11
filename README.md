@@ -14,7 +14,7 @@ voir avec le propriétaire du github
 
 ### installation github CLI
 
-1. suivre les [commandes d'installation](https://github.com/cli/cli/blob/trunk/docs/install_linuxmd#debian-ubuntu-linux-raspberry-pi-os-apt)
+1. suivre les [commandes d'installation](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
 
 2. `gh auth login` et suivre les instructions, ie sélectionner:
     * github
