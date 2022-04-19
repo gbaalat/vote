@@ -14,8 +14,12 @@ def create_app(config_name):
     app.config.from_object(get_config(config_name))
 
     from vote.auth.endpoints import auth_bp
+
     app.register_blueprint(auth_bp)
-    
+    from vote.general.endpoints import gen_bp
+
+    app.register_blueprint(gen_bp)
+
     db.init_app(app)
     migrate.init_app(app, db)
     return app
