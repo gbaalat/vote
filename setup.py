@@ -19,7 +19,6 @@ INSTALL_REQUIRES = [
     "requests",
     "urllib3",
     "werkzeug",
-    "gitpython",
 ]
 EXTRAS_REQUIRE = {
     "dev": [

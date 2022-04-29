@@ -5,7 +5,6 @@
 from vote import db
 from uuid import uuid4
 
-
 class Utilisateur(db.Model):
     """Modèle utilisateur pour la base de données"""
 
@@ -27,7 +26,9 @@ class Utilisateur(db.Model):
     # classe = db.relationship("Classe", db.backref("user"))
 
     def __repr__(self):
-        return f"<User nom={self.nom} email={self.email}, public_id={self.public_id}, admin={self.admin}>"
+        return (
+            f"<User nom={self.nom} email={self.email}, public_id={self.public_id}, admin={self.admin}>"
+        )
 
     # exemples de méthodes de recherche d'un utilisateur
     @classmethod

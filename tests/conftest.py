@@ -26,3 +26,4 @@ def db(app, client, request):
 
     request.addfinalizer(fin)
     return database
+
