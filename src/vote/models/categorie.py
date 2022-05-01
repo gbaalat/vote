@@ -7,8 +7,8 @@ from vote import db
 class Categorie(db.Model):
     """Modèle categorie pour la base de données"""
 
-    niveau = db.Column(db.String(1), primary_key=True)
-    genre = db.Column(db.String(1), primary_key=True)
+    niveau = db.Column(db.String(1), nullable=False)
+    genre = db.Column(db.String(1), nullable = False)
 
     def __repr__(self):
         return (
