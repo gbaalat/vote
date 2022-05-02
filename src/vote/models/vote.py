@@ -10,13 +10,7 @@ class Vote(db.Model):
 
     id_user = db.Column(db.Integer, db.ForeignKey("utilisateur.id"), primary_key=True)
     id_candidat = db.Column(db.Integer, db.ForeignKey("candidat.id"), nullable=False)
-    categorie = db.Column(db.String(2), primary_key=True)
-    __table_args__=(
-        ForeignKeyConstraint(
-            ['categorie'],
-            ['categorie.niveau'+'categorie.genre'],
-        ),
-    )
+    categorie = db.Column(db.Integer, db.ForeignKey("categorie.id"), primary_key=True)
     
     user = db.relationship("Utilisateur", db.backref("vote"))
     candidat = db.relationship("Candidat", db.backref("vote"))
