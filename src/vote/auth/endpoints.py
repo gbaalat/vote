@@ -7,5 +7,29 @@ auth_bp = Blueprint('auth_bp', __name__,
 )
 
 @auth_bp.route('/')
-def login():
-    return render_template('auth/login.html')
+def auth():
+    pass
+
+@auth_bp.route('/adresseMail')
+def adresseMail():
+    pass
+
+@auth_bp.route('/envoyerMail')
+def envoyerMail():
+    pass
+
+@auth_bp.route('/creerCompte')
+def creerCompte():
+    pass
+
+@auth_bp.route('/connexion')
+def connexion():
+    pass
+
+@auth_bp.route('/motDePasseOublie')
+def motDePasseOublie():
+    pass
+
+@auth_bp.route('/changerMotDePasse')
+def changerMotDePasse():
+    pass

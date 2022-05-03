@@ -1,4 +1,4 @@
-#!/home/tnsi-eleve2/Bureau/NSI/Projet/vote/venv/bin/python3
+#!/home/tnsi-eleve2/Bureau/NSI/Projet/vote/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
