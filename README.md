@@ -2,6 +2,23 @@
 
 vote en ligne : projet de terminale NSI à l'Immaculée Conception de Pau
 
+## AVANT DE DEVELOPPER
+
+ * ouvrir un terminal et se placer à la racine du projet avec `cd`
+ * lancer l'environnement virtuel `source venv/bin/activate`
+ * ouvrir l'IDE avec `code .`
+
+## modification de la base de donnée
+
+ la création de la base se fait via `flask db init` 
+
+ Ensuite:
+ * créer le script sql de migration avec `flask db migrate --message "ajout du modèle candidat"`
+ * lancer la migration avec `flask db upgrade`
+ Ces deux points sont à relancer à chaque modification des classes modèles (src/vote/models/...)
+
+Le script d'insertion des candidats est dans le dossier script à la racine du projet ainsi que la commande sqlite à lancer (chemins à modifier)
+
 ## installation en mode développement
 
 ### mise à jour du système
