@@ -3,7 +3,8 @@ import git
 
 gen_bp = Blueprint('gen_bp', __name__,
     template_folder='templates',
-    static_folder='static'
+    static_folder='static',
+    url_prefix='/gen'
 )
 
 
