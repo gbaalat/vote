@@ -21,6 +21,7 @@ def create_app(config_name):
     app.register_blueprint(auth_bp)
     app.register_blueprint(nav_bp)
     app.register_blueprint(votes_bp)
+    app.register_blueprint(gen_bp)
     
     db.init_app(app)
     migrate.init_app(app, db)

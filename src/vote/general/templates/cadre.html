@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page d'acceuil Bal</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="./static/style.css">
+	
+</head>
+<body> 
+	<header>
+	    <h1 href="http://127.0.0.1:5000/" class="linkedImage">Bal 2022</h1>
+    </header>
+
+	<h3 id="auth">
+		<a href="http://127.0.0.1:5000/connexion" style:"color:#f0984b">Se connecter</a></br>
+		<a href="http://127.0.0.1:5000/inscription" style:"color:#f0984b">S'inscrire</a>
+	</h3>
+
+    <section>
+        {% block section %} {% endblock %}
+    </section>
+
+	<footer>
+		<p> Terminales Spé NSI 2021-2022</p>
+	</footer>
+</body>
+</html> 

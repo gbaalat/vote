@@ -12,7 +12,7 @@ def auth():
 
 @auth_bp.route('/adresseMail')
 def adresseMail():
-    pass
+    return render_template("inscription.html")
 
 @auth_bp.route('/envoyerMail')
 def envoyerMail():
@@ -24,7 +24,7 @@ def creerCompte():
 
 @auth_bp.route('/connexion')
 def connexion():
-    pass
+    return render_template("connexion.html")
 
 @auth_bp.route('/motDePasseOublie')
 def motDePasseOublie():

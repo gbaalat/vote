@@ -1,4 +1,3 @@
-from click import pass_context
 from flask import Blueprint, render_template
 
 nav_bp = Blueprint('nav_bp', __name__,
@@ -9,5 +8,5 @@ nav_bp = Blueprint('nav_bp', __name__,
 
 @nav_bp.route('/')
 def nav():
-    pass
+    return render_template("index.html")
 

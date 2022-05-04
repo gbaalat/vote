@@ -1,0 +1,139 @@
+/***** CSS *******/
+/***** CSS *******/
+
+body{
+	display:grid;
+	box-sizing:border-box ;
+	font-family: 'Century Gothic', Calibri, serif;
+	font-size: 13px;
+	text-align: center;
+	background-color:#341e40;
+	width:80%;
+	margin-left:5%;
+	margin-right:5%;
+	color:#f0984b;
+}
+section{
+	grid-template-rows: auto;
+}
+aside{
+	grid-template-rows: auto;
+}
+
+img {
+	box-sizing:border-box ;
+	width: 33.33%
+}
+footer{
+	box-sizing:border-box ;
+	color: #341e40;
+	background-color: #b9204d;
+	border-top: 2px solid #AAA;
+	grid-template-rows: 100px;
+	grid-template-columns: 50%50%;
+	
+}
+h1{
+	background: url(loog.png) no-repeat left top;
+	height: 100px;
+	width: 100%;
+	margin-top:1px;
+	color: #fcd22e;
+	font-size: 40px;
+}
+
+
+h2{
+	background-image:linear-gradient(to right, #341e40,#6c3a4e, #341e40);
+	height: 25px;
+	width: 100%;
+	margin-top:1px;
+	color: #fcd22e;
+}
+#haut{
+	font-size: 23px;
+	height: 30px;
+
+}
+
+#query{
+	position: absolute;
+	left: 50%;
+}
+
+table,
+td {
+    border: 1px solid #f0984b;
+}
+
+#auth{
+	font-size: 13px;
+	position: absolute;
+	top: 0px;
+	left: 67%;
+	
+}
+header{
+	background-image:linear-gradient(to right,#ad3e4f, #341e40);
+	grid-template-rows: 100px;
+}
+
+#inputconnect{
+	height: 30%
+}
+
+#menu{
+ 	list-style-type:none;
+	background-color:#b9204d;
+	display:flex;
+	flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+	height:50px;
+	margin-left:0px;
+	margin-right:0px;
+    }
+#menu li a{
+	display:block;
+	text-decoration:none;
+	padding:15px;
+	width:100%;
+}
+
+#menu li a:hover{
+	background-color:#f0984b;
+	color:white;
+	display:flex;
+	text-decoration:none;
+	padding:15px;
+	height:50px;
+}
+#menu * *{
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+	justify-content: space-around;
+	height:50px;
+    }
+	
+a:link {
+  color: #fcd22e;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ff6362;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f8f088;
+  background-color: transparent;
+  text-decoration: underline;
+}
+	
+html{
+	background-color:#000000;
+}

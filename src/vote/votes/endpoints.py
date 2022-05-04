@@ -1,5 +1,6 @@
-from click import pass_context
+
 from flask import Blueprint, render_template
+from vote.votes.business import candidat
 
 votes_bp = Blueprint('votes_bp', __name__,
     template_folder='templates',
@@ -9,4 +10,4 @@ votes_bp = Blueprint('votes_bp', __name__,
 
 @votes_bp.route('/')
 def vote():
-    pass
+    return render_template("vote.html", content=candidat)

@@ -3,7 +3,6 @@
     (interface vers la table vote)
 """
 from vote import db
-from sqlalchemy import ForeignKeyConstraint
 
 class Vote(db.Model):
     """Modèle vote pour la base de données"""

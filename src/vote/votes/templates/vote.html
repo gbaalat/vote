@@ -1,0 +1,29 @@
+{% extends 'cadre.html' %}
+
+{% block section %}
+	<h2 id="haut">Nom de la Catégorie</h2>
+	<p> Explications blablablabalbalblablablabla</br>
+		blablablablablablablablablablalbalbalblbalba</br>
+	</p>
+
+	<h2 id="haut">Candidats</h2>
+		<form id="form"> 
+			<input type="search" id="query" name="q" placeholder="Chercher">
+			<button>Chercher</button>
+		</form>
+		<table>
+		
+			<tbody>
+				{% for id in content %}
+					<tr>
+						<td><button>Voter</button></td>
+						<td>{{id['nom']}}</td>
+						<td>{{id['prénom']}}</td>
+						<td>{{id['classe']}}</td>
+					</tr>	
+				{% endfor %}
+			</tbody>
+		</table>
+		<p><a href="#haut">retour en haut de la page</a></p>
+
+{% endblock %}
