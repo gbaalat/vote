@@ -14,6 +14,7 @@ INSTALL_REQUIRES = [
     "Flask",
     "Flask-Migrate",
     "Flask-SQLAlchemy",
+    "Flask-Mail",
     "python-dateutil",
     "python-dotenv",
     "requests",

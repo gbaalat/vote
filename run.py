@@ -6,7 +6,7 @@
 """
 import os
 
-from vote import create_app, db
+from vote import create_app, db, mail
 from vote.models.utilisateur import Utilisateur
 
 app = create_app(os.getenv("FLASK_ENV", "development"))
