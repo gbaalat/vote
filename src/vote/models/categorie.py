@@ -13,5 +13,5 @@ class Categorie(db.Model):
 
     def __repr__(self):
         return (
-            f"<Categorie niveau={self.niveau}, genre={self.genre}>"
+            f"<Categorie id={self.id} niveau={self.niveau}, genre={self.genre}>"
         )

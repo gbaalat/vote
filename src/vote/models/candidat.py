@@ -14,9 +14,9 @@ class Candidat(db.Model):
     genre = db.Column(db.String(1), nullable=False)
 
     def __repr__(self):
-        return (
-            f"<Candidat prenom={self.prenom}, nom={self.nom}, classe={self.classe}, genre={self.genre}>"
-        )
+        me = f"<Candidat id={self.id} prenom={self.prenom}, nom={self.nom},"
+        me += f" classe={self.classe}, genre={self.genre}>" 
+        return me
     
     @classmethod
     def find_by_id(cls, id):

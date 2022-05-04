@@ -6,8 +6,11 @@
 """
 import os
 
-from vote import create_app, db, mail
+from vote import create_app, db
 from vote.models.utilisateur import Utilisateur
+from vote.models.candidat import Candidat
+from vote.models.categorie import Categorie
+from vote.models.vote import Vote
 
 app = create_app(os.getenv("FLASK_ENV", "development"))
 
@@ -16,6 +19,9 @@ app = create_app(os.getenv("FLASK_ENV", "development"))
 def shell():
     return {
         "db": db,
-        "Utilisateur": Utilisateur
+        "Utilisateur": Utilisateur,
+        "Candidat": Candidat,
+        "Categorie": Categorie,
+        "Vote": Vote
     }
 

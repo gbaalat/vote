@@ -26,9 +26,9 @@ class Utilisateur(db.Model):
     # classe = db.relationship("Classe", db.backref("user"))
 
     def __repr__(self):
-        return (
-            f"<User nom={self.nom} email={self.email}, public_id={self.public_id}, admin={self.admin}>"
-        )
+        me = f"<User id={self.id} email={self.email},"
+        me += f" public_id={self.public_id}, admin={self.admin}>"
+        return me
 
     # exemples de méthodes de recherche d'un utilisateur
     @classmethod

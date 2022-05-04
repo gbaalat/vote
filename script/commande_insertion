@@ -1,0 +1,1 @@
+cat chemin/insert_candidats.sql | sqlite3 chemin2/src/vote/vote_dev.db
