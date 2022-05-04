@@ -5,6 +5,7 @@ from vote import create_app
 from vote.config import SQLITE_DEV, SQLITE_PROD, SQLITE_TEST
 
 
+
 def test_config_development():
     app = create_app("development")
     assert app.config["SECRET_KEY"] != "open me"
