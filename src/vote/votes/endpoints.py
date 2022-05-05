@@ -8,6 +8,6 @@ votes_bp = Blueprint('votes_bp', __name__,
     url_prefix='/votes'
 )
 
-@votes_bp.route('/')
-def vote():
+@votes_bp.route('/<int:categorie_id>')
+def vote(categorie_id):
     return render_template("vote.html", content=candidat)
