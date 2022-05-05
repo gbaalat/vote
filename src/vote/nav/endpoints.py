@@ -6,7 +6,7 @@ nav_bp = Blueprint('nav_bp', __name__,
     url_prefix='/nav'
 )
 
-@nav_bp.route('/')
-def nav():
+@nav_bp.route('/<categories>')
+def nav(categories):
     return render_template("index.html")
 
