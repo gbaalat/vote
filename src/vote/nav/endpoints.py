@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from vote.models.categorie import Categorie
 
 nav_bp = Blueprint('nav_bp', __name__,
     template_folder='templates',
@@ -6,7 +7,8 @@ nav_bp = Blueprint('nav_bp', __name__,
     url_prefix='/nav'
 )
 
-@nav_bp.route('/<categories>')
-def nav(categories):
-    return render_template("index.html")
+@nav_bp.route('/')
+def nav():
+    categories = Categorie.query.all()
+    return render_template("index.html", categories = categories)
 
