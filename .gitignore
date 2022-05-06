@@ -162,4 +162,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
 vote_dev.db
+=======
+vote/vote_dev.db
+>>>>>>> refs/remotes/origin/main
