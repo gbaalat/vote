@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
 auth_bp = Blueprint('auth_bp', __name__,
     template_folder='templates',
@@ -6,20 +6,17 @@ auth_bp = Blueprint('auth_bp', __name__,
     url_prefix='/auth'
 )
 
-@auth_bp.route('/')
-def auth():
-    pass
 
-@auth_bp.route('/adresseMail')
-def adresseMail():
+@auth_bp.route('/inscription', methods=["GET", "POST"])
+def inscription():
+    """Page d'insciption, l'utilisateur y rentre son adresse mail, envoi du mail quand la méthode est POST"""
+    if request.method == "POST":
+        pass
     return render_template("auth_inscription.html")
-
-@auth_bp.route('/envoyerMail')
-def envoyerMail():
-    pass
 
 @auth_bp.route('/creerCompte')
 def creerCompte():
+    """Page dont le lien est contenu dans le mail d'inscription."""
     pass
 
 @auth_bp.route('/connexion')
