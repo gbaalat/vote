@@ -18,3 +18,18 @@ def obtenirCandidats(idCategorie):
         candidats.append(provisoire)
     return candidats
 
+def obtenirCategorie(idCategorie):
+    nomCategorie = ""
+    cat = Categorie.query.get(idCategorie)
+    if cat.genre == "M":
+        nomCategorie = "Garçons "
+    if cat.genre == "F":
+        nomCategorie = "Filles "
+    if cat.niveau == "T" :
+        nomCategorie += "Terminale"
+    if cat.niveau == "P" :
+        nomCategorie += "Première"
+    if cat.niveau == "S" :
+        nomCategorie += "Seconde"
+    return nomCategorie
+   
