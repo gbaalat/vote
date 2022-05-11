@@ -1,6 +1,6 @@
 
 from flask import Blueprint, render_template
-from vote.votes.business import candidat
+from vote.votes.business import obtenirCandidats, obtenirCategorie
 
 votes_bp = Blueprint('votes_bp', __name__,
     template_folder='templates',
@@ -8,6 +8,7 @@ votes_bp = Blueprint('votes_bp', __name__,
     url_prefix='/votes'
 )
 
-@votes_bp.route('/')
-def vote():
-    return render_template("vote.html", content=candidat)
+@votes_bp.route('/<int:categorie_id>')
+def vote(categorie_id):
+    
+    return render_template("vote.html", content=obtenirCandidats(categorie_id), nomCategorie = obtenirCategorie(categorie_id))
