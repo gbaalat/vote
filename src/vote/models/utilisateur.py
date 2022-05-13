@@ -13,7 +13,7 @@ class Utilisateur(db.Model):
     # __tablename__ = "user"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    mdp = db.Column(db.String(20))
+    mdp = db.Column(db.String(250))
     email = db.Column(db.String(250), unique=True, nullable=False)
     admin = db.Column(db.Boolean, default=False)
     public_id = db.Column(db.String(36), unique=True, default=lambda: str(uuid4()))
@@ -50,6 +50,22 @@ class Utilisateur(db.Model):
         db.session.commit()
         return True
 
+
+    @classmethod
+    def verify_email(cls, email):
+        obj = cls.find_by_email(email)
+        if obj is not None:
+            return True
+        else:
+            return False
+
+    @classmethod
+    def verify_mdp(cls, email, mdp):
+        if cls.verify_email(email):
+            u = cls.query.filter(cls.email.like(email)).first()
+            if u.mdp == mdp:
+                return True
+        return False
 
 # Exemples d'utilisation de la classe
 """
