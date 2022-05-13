@@ -39,6 +39,17 @@ class Utilisateur(db.Model):
     def find_by_public_id(cls, public_id):
         return cls.query.filter_by(public_id=public_id).first()
 
+    @classmethod
+    def enregistrerMdp(cls, public_id, mdp):
+        utilisateur = cls.find_by_public_id(public_id)
+        if utilisateur is None:
+            return False
+        setattr(utilisateur, "mdp", mdp)
+        setattr(utilisateur, "public_id", str(uuid4()))
+        db.session.add(utilisateur)
+        db.session.commit()
+        return True
+
 
     @classmethod
     def verify_email(cls, email):
