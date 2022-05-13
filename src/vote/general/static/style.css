@@ -30,7 +30,7 @@ footer{
 	background-color: #b9204d;
 	border-top: 2px solid #AAA;
 	grid-template-rows: 100px;
-	grid-template-columns: 50%50%;
+	grid-template-columns: 50% 50%;
 	
 }
 h1{
@@ -136,4 +136,8 @@ a:hover {
 	
 html{
 	background-color:#000000;
+}
+
+ul{
+	list-style: none;
 }

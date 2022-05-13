@@ -31,7 +31,7 @@
 			blablablablablablablablablablablablablablablabla</br>
 
 			</p>
-			<a href="http://127.0.0.1:5000/vote" style:"color:#f0984b">Voter</a></br>
+			<a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
 			<a href="#haut">retour en haut de la page</a>
 		{% endfor %}
 

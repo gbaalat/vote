@@ -22,4 +22,3 @@ def test_utilisateur(adresse_mail):
         return 
         
 
-"""{{url_for('auth_bp.creerMdp',public_id=public_id)}}"""
