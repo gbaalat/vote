@@ -1,7 +1,7 @@
 {% extends 'cadre.html' %}
 
 {% block section %}
-	<h2 id="haut">{{nomCategorie}}</h2>
+	<h2 id="haut">{{dico[cat.genre] + " " + dico[cat.niveau]}}</h2>
 	<p> Explications blablablabalbalblablablabla</br>
 		blablablablablablablablablablalbalbalblbalba</br>
 	</p>
@@ -14,12 +14,18 @@
 		<table>
 		
 			<tbody>
-				{% for id in content %}
+				{% for candidat in content %}
 					<tr>
-						<td><button>Voter</button></td>
-						<td>{{id['nom']}}</td>
-						<td>{{id['prénom']}}</td>
-						<td>{{id['classe']}}</td>
+						<td>
+
+							<form method="post" action= "{{url_for('votes_bp.vote', categorie_id = cat.id)}}">
+								<input type="hidden" name="idCandidat"  value="{{candidat['identifiant']}}" >
+								<input type="submit" value="Voter" />
+							</form>
+						</td>
+						<td>{{candidat['nom']}}</td>
+						<td>{{candidat['prénom']}}</td>
+						<td>{{candidat['classe']}}</td>
 					</tr>	
 				{% endfor %}
 			</tbody>

@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, flash, url_for
 from vote.models.utilisateur import Utilisateur
+from vote.auth.business import creer_utilisateur, envoi_mail, test_utilisateur
 
 auth_bp = Blueprint('auth_bp', __name__,
     template_folder='templates',
@@ -12,7 +13,11 @@ auth_bp = Blueprint('auth_bp', __name__,
 def inscription():
     """Page d'insciption, l'utilisateur y rentre son adresse mail, envoi du mail quand la méthode est POST"""
     if request.method == "POST":
-        pass
+        if test_utilisateur(request.form["email"]):
+            public_id=creer_utilisateur(request.form["email"])
+            envoi_mail(render_template("mail.html",public_id=public_id),request.form["email"])
+        else:
+            flash("Adresse mail déjà utilisée")
     return render_template("auth_inscription.html")
 
 @auth_bp.route('/creerMdp/<string:public_id>', methods=["GET", "POST"])

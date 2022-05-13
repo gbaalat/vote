@@ -6,7 +6,7 @@
 		blablablablablablablablablablalbalbalblbalba</br>
 	</p>
 	<h2>
-		<form id="form" action="{{ url_for('auth_bp.inscription') }}" method="post"> 
+		<form id="form" method="POST" action="{{ url_for('auth_bp.inscription') }}">
 			<input type="text" id="email" name="email" placeholder="Entrer votre email...">
 			<button>Entrer</button>
 		</form>

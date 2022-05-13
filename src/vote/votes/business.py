@@ -1,5 +1,9 @@
+from flask import flash 
 from vote.models.categorie import Categorie
 from vote.models.candidat import Candidat
+from vote.models.utilisateur import Utilisateur
+from vote.models.vote import Vote
+from vote import db
 
 """
 a = {'nom':'Rimbaud', 'prénom' : 'Arthur', 'classe': 'T°2'}
@@ -14,22 +18,18 @@ def obtenirCandidats(idCategorie):
     liste = Candidat.query.filter(Candidat.genre == genre, Candidat.classe.like("%" + classe + "%")).all()
     candidats = []
     for eleve in liste:
-        provisoire = {'nom': eleve.nom,'prénom' : eleve.prenom, 'classe': eleve.classe }
+        provisoire = {'nom': eleve.nom,'prénom' : eleve.prenom, 'classe': eleve.classe, 'identifiant' : eleve.id }
         candidats.append(provisoire)
     return candidats
 
+dico = {"M" : "Garçons", "F" : "Filles", "T" : "Terminale", "P" : "Première", "S" : "Seconde"}
+
 def obtenirCategorie(idCategorie):
-    nomCategorie = ""
     cat = Categorie.query.get(idCategorie)
-    if cat.genre == "M":
-        nomCategorie = "Garçons "
-    if cat.genre == "F":
-        nomCategorie = "Filles "
-    if cat.niveau == "T" :
-        nomCategorie += "Terminale"
-    if cat.niveau == "P" :
-        nomCategorie += "Première"
-    if cat.niveau == "S" :
-        nomCategorie += "Seconde"
-    return nomCategorie
+    return cat
    
+def vote(idCategorie, idCandidat, idUser):
+    v = Vote(id_user = idUser, id_candidat = idCandidat, id_categorie = idCategorie)
+    db.session.add(v)
+    db.session.commit()
+    flash("ça a marché?")
