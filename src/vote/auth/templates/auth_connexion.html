@@ -10,7 +10,7 @@
 		<form id="form" method="post" action="{{url_for('auth_bp.connexion')}}"> 
 			<input type="text" id="email" name="email" placeholder="Entrer votre email..." required>
 			<input type="password" id="mdp" name="mdp" placeholder="Mot de passe..." required>
-			<button type="submit">Entrer</button>
+			<input type="submit" id="envoi" value="Envoyer">
 		</form>
 	</h2>
 {% endblock %}
