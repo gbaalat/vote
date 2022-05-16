@@ -28,8 +28,15 @@ def obtenirCategorie(idCategorie):
     cat = Categorie.query.get(idCategorie)
     return cat
    
-def vote(idCategorie, idCandidat, idUser):
+def jeVote(idCategorie, idCandidat, idUser):
     v = Vote(id_user = idUser, id_candidat = idCandidat, id_categorie = idCategorie)
     db.session.add(v)
     db.session.commit()
-    flash("ça a marché?")
+    flash("A voté")
+
+def categoriesVotees(idUser):
+    liste = Vote.query.filter(Vote.id_user == idUser).all()
+    catVotees = []
+    for cat in liste:
+        catVotees.append(cat.id_categorie)
+    return catVotees
