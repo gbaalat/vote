@@ -16,6 +16,7 @@ def inscription():
         if test_utilisateur(request.form["email"]):
             public_id=creer_utilisateur(request.form["email"])
             envoi_mail(render_template("mail.html",public_id=public_id),request.form["email"])
+            flash("Un mail a été envoyé dans votre boîte mail.")
         else:
             flash("Adresse mail déjà utilisée")
     return render_template("auth_inscription.html")
