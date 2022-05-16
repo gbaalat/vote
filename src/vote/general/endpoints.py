@@ -7,10 +7,12 @@ from flask import (
 )
 import git
 
-gen_bp = Blueprint('gen_bp', __name__,
-    template_folder='templates',
-    static_folder='static',
-    url_prefix='/gen'
+gen_bp = Blueprint(
+    "gen_bp",
+    __name__,
+    template_folder="templates",
+    static_folder="static",
+    url_prefix="/gen",
 )
 
 
@@ -19,13 +21,16 @@ def home():
     """renvoie vers l'écran d'accueil"""
     return redirect(url_for("nav_bp.nav"))
 
+
 @gen_bp.app_errorhandler(404)
 def page_non_trouve(error):
     return render_template("404.html"), 404
 
+
 @gen_bp.app_errorhandler(500)
 def erreur_interne(error):
     return render_template("500.html"), 500
+
 
 @gen_bp.route("/git_update", methods=["POST"])
 def git_update():
@@ -40,4 +45,3 @@ def git_update():
     ).checkout()
     origin.pull()
     return "", 200
-

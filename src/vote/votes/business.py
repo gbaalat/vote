@@ -1,4 +1,4 @@
-from flask import flash 
+from flask import flash
 from vote.models.categorie import Categorie
 from vote.models.candidat import Candidat
 from vote.models.utilisateur import Utilisateur
@@ -12,27 +12,40 @@ c = {'nom':'Brava', 'prénom' : 'Caroline', 'classe': 'T°2'}
 d = {'nom':'Brava', 'prénom' : 'Carla', 'classe': 'T°1'}
 candidat = a, b, c, d
 """
+
+
 def obtenirCandidats(idCategorie):
     genre = Categorie.query.get(idCategorie).genre
     classe = Categorie.query.get(idCategorie).niveau[0]
-    liste = Candidat.query.filter(Candidat.genre == genre, Candidat.classe.like("%" + classe + "%")).all()
+    liste = Candidat.query.filter(
+        Candidat.genre == genre, Candidat.classe.like("%" + classe + "%")
+    ).all()
     candidats = []
     for eleve in liste:
-        provisoire = {'nom': eleve.nom,'prénom' : eleve.prenom, 'classe': eleve.classe, 'identifiant' : eleve.id }
+        provisoire = {
+            "nom": eleve.nom,
+            "prénom": eleve.prenom,
+            "classe": eleve.classe,
+            "identifiant": eleve.id,
+        }
         candidats.append(provisoire)
     return candidats
 
-dico = {"M" : "Garçons", "F" : "Filles", "T" : "Terminale", "P" : "Première", "S" : "Seconde"}
+
+dico = {"M": "Garçons", "F": "Filles", "T": "Terminale", "P": "Première", "S": "Seconde"}
+
 
 def obtenirCategorie(idCategorie):
     cat = Categorie.query.get(idCategorie)
     return cat
-   
+
+
 def jeVote(idCategorie, idCandidat, idUser):
-    v = Vote(id_user = idUser, id_candidat = idCandidat, id_categorie = idCategorie)
+    v = Vote(id_user=idUser, id_candidat=idCandidat, id_categorie=idCategorie)
     db.session.add(v)
     db.session.commit()
     flash("A voté")
+
 
 def categoriesVotees(idUser):
     liste = Vote.query.filter(Vote.id_user == idUser).all()
