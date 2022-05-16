@@ -19,4 +19,4 @@ class Vote(db.Model):
     def __repr__(self):
         me = f"<Vote id={self.id} votant={self.id_user}, candidat={self.id_candidat},"
         me += f" categorie={self.id_categorie}>"
-        return me
+        return me  
