@@ -1,7 +1,7 @@
 
 from flask import Blueprint, redirect, render_template, request, session, url_for
 from vote.votes.business import obtenirCandidats, obtenirCategorie, dico, jeVote, categoriesVotees
-
+from vote.general.decorators import connexion_requise
 
 votes_bp = Blueprint('votes_bp', __name__,
     template_folder='templates',
@@ -9,7 +9,9 @@ votes_bp = Blueprint('votes_bp', __name__,
     url_prefix='/votes'
 )
 
+
 @votes_bp.route('/<int:categorie_id>', methods=['GET', 'POST'])
+@connexion_requise
 def vote(categorie_id):
     if request.method == 'GET':
         listeCatVotees = categoriesVotees(session["id"])
