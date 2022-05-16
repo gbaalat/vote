@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect
+from flask import Blueprint, redirect, session, url_for
 import git
 
 gen_bp = Blueprint('gen_bp', __name__,
@@ -10,10 +10,9 @@ gen_bp = Blueprint('gen_bp', __name__,
 
 @gen_bp.route("/")
 def home():
-    """renvoie vers l'écran de connexion"""
-    #TODO : un test pour savoir si l'utilisateur est connecté serait un plus
-    #TODO : sinon le test se fera dans auth/connexion
-    return redirect('/auth/connexion')
+    """renvoie vers l'écran d'accueil"""
+    return redirect(url_for("nav_bp.nav"))
+
 
 
 @gen_bp.route("/git_update", methods=["POST"])

@@ -45,6 +45,12 @@ def connexion():
             return redirect(url_for("nav_bp.nav"))
     return render_template("auth_connexion.html")
 
+@auth_bp.route('/deconnexion')
+def deconnexion():
+    session.pop('id')
+    flash('Vous vous êtes bien déconnecté(e)')
+    return redirect(url_for('auth_bp.connexion'))
+
 @auth_bp.route('/motDePasseOublie')
 def motDePasseOublie():
     pass
