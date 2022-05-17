@@ -138,6 +138,14 @@ html{
 	background-color:#000000;
 }
 
+.flashes{
+	width: 100%;
+	color: #fc9700;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
 ul{
 	list-style: none;
 }
