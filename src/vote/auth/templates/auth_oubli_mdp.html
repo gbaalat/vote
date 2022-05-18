@@ -2,13 +2,13 @@
 
 {% block section %}
 	<h2 id="haut">Mot de passe oublié</h2>
-	<p> Explications blablablabalbalblablablabla</br>
-		blablablablablablablablablablalbalbalblbalba</br>
+	<p> Veuillez renseigner votre adresse mail</br>
+		pour réinitialiser votre mot de passe</br>
 	</p>
 	<h2>
 		<form id="form" method="POST" action="{{ url_for('auth_bp.motDePasseOublie') }}">
-			<input type="text" id="email" name="email" placeholder="Entrer votre email...">
-			<input type="submit" id="envoi" value="Envoyer">
+			<input type="text" id="email" name="email" placeholder="Entrer votre email..." required>
+			<button>Envoyer</button>
 		</form>
 	</h2>
 {% endblock %}
