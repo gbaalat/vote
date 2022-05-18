@@ -53,7 +53,17 @@ def deconnexion():
 
 @auth_bp.route('/motDePasseOublie')
 def motDePasseOublie():
-    pass
+    if request.method == "POST":
+        email = request.form["email"].strip()
+        u = Utilisateur.query.filter_by(email=email).first()
+        if u is None or not(u.verify_email(email)):
+            flash("Email incorrect, veuillez réessayer")
+            return redirect(url_for('auth_bp.motDePasseOublie'))
+        else:
+            mdp = u.mdp
+            envoi_mail(render_template("mail.html",mdp=mdp),email) #recuperer mail.html et diriger vers un autre template (contenu du mail)
+            flash("Mail envoyé !")
+    return render_template("auth_oubli_mdp.html")
 
 @auth_bp.route('/changerMotDePasse')
 def changerMotDePasse():
