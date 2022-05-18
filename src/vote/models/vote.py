@@ -12,6 +12,7 @@ class Vote(db.Model):
     id_user = db.Column(db.Integer, db.ForeignKey("utilisateur.id"), nullable=False)
     id_candidat = db.Column(db.Integer, db.ForeignKey("candidat.id"), nullable=False)
     id_categorie = db.Column(db.Integer, db.ForeignKey("categorie.id"), nullable=False)
+    vote_possible = db.Column(db.Boolean, default=True)
 
     # user = db.relationship("Utilisateur", db.backref("vote"))
     # candidat = db.relationship("Candidat", db.backref("vote"))
