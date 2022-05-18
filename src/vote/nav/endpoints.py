@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template
+from vote.general.decorators import connexion_requise
 from vote.models.categorie import Categorie
+from vote.models.utilisateur import Utilisateur
 from vote.models.vote import Vote
+from vote.nav.business import data_par_cat
 
 nav_bp = Blueprint(
     "nav_bp",
@@ -12,7 +15,8 @@ nav_bp = Blueprint(
 
 
 @nav_bp.route("/")
+@connexion_requise
 def nav():
-    categories = Categorie.query.all()
-    return render_template("index.html", categories=categories, Vote = Vote )
+    data = data_par_cat(nav.id)
+    return render_template("index.html", data=data)
 

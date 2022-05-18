@@ -1,47 +1,37 @@
 {% extends 'cadre.html' %}
  
 {% block section %}
-   <h2 id="haut">Catégories</h2>
+    <h2 id="haut">Catégories</h2>
  
-        {% for cat in categories %}
-           <h2 id="Gen">Catégorie
-           {% if cat.genre == "M" %}
-               Garçon
-           {% endif %}
-           {% if cat.genre == "F" %}
-               Fille
-           {% endif %}
-           {% if cat.niveau == "T" %}
-               Terminale
-           {% endif %}
-           {% if cat.niveau == "P" %}
-               Première
-           {% endif %}
-           {% if cat.niveau == "S" %}
-               Seconde
-           {% endif %}
-          
-           </h2>
-           {% if cat.ouvert %}
-           <p>Top 3</br></p>
-           {%if "id" in session: %}
-           {% set aVote = Vote.query.filter(Vote.id_categorie == cat.id and Vote.id_user == session["id"]).first()%}
-           {%if aVote != None:%}
-               <p>Vous avez voté</p> 
-           {%else:%}
-               <p>Vous n'avez pas encore voté</p>
-           {%endif%}
-           {%endif%}
-            <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
+    {% for data_cat in data %}
+        <h2 id="Gen">Catégorie {{ data_cat.nom }}</h2>
+        {% if data_cat.ouvert %}
+            <p>Top 3</p>
+            <ol>
+                {% for leader in data_cat.top3 %}
+                    <li>
+                        <span class="nomCandidat">{{ leader[1] }} {{ leader[2] }}</span>
+                        <span class="total">{{ leader[3] }}</span>
+                    </li>
+                {% endfor %}
+            </ol>
+            {%if data_cat.aVote %}
+                <p>Vous avez voté</p> 
+            {%else:%}
+                <p>
+                    <a href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" style:"color:#f0984b">Voter</a>
+                </p>
+            {%endif%}
+            
             <a href="#haut">retour en haut de la page</a>
-           </h4>
-           {% else %}
-           <p>Votes Fermés</p>
+        </h4>
+        {% else %}
+            <p>Votes Fermés</p>
 
-           
-           <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
-           <a href="#haut">retour en haut de la page</a>
-           {% endif %}
-        {% endfor %}
+        
+            <a href="" style:"color:#f0984b">Le vote est fermé</a></br>
+            <a href="#haut">retour en haut de la page</a>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
  
