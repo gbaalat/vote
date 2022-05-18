@@ -54,7 +54,7 @@ def connexion():
             session["id"] = u.id
             return redirect(url_for("nav_bp.nav"))
     if "id" in session:
-        return redirect(url_for("nav_bp.nav"))
+        return redirect(url_for("nav_bp.nav")),flash("Déconnectez vous pour vous connectez à un autre compte.")
     else:
         return render_template("auth_connexion.html")
 
