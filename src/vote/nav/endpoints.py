@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from vote.models.categorie import Categorie
+from vote.models.vote import Vote
 
 nav_bp = Blueprint(
     "nav_bp",
@@ -16,5 +17,5 @@ def nav():
 
     for elt in categories:
         elt
-    return render_template("index.html", categories=categories)
+    return render_template("index.html", categories=categories, Vote = Vote )
 
