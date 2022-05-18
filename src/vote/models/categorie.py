@@ -15,3 +15,9 @@ class Categorie(db.Model):
 
     def __repr__(self):
         return f"<Categorie id={self.id} niveau={self.niveau}, genre={self.genre}>"
+    def ouverture(self):
+        if self.ouvert == True:
+            self.ouvert = False
+        else:
+            self.ouvert = True
+
