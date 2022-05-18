@@ -3,13 +3,13 @@
 {% block section %}
    <h2 id="haut">Catégories</h2>
  
-       {% for cat in categories %}
+        {% for cat in categories %}
            <h2 id="Gen">Catégorie
            {% if cat.genre == "M" %}
-               Homme
+               Garçon
            {% endif %}
            {% if cat.genre == "F" %}
-               Femme
+               Fille
            {% endif %}
            {% if cat.niveau == "T" %}
                Terminale
@@ -22,16 +22,17 @@
            {% endif %}
           
            </h2>
-           <p>Top 3</br>
-           blablablablablablablablablablablablablablablabla</br>
-           blablablablablablablablablablablablablablablabla</br>
-           blablablablablablablablablablablablablablablabla</br>
-           blablablablablablablablablablablablablablablabla</br>
-           blablablablablablablablablablablablablablablabla</br>
-           blablablablablablablablablablablablablablablabla</br>
-           </p>
-           <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
+           {% if cat.ouvert %}
+           <p>Top 3</br></p>
+			
+            <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
+            <a href="#haut">retour en haut de la page</a>
+            {% endif %}
+           </h4>
+           {% if not cat.ouvert %}
+           <p>Votes Fermés</p>
            <a href="#haut">retour en haut de la page</a>
-       {% endfor %}
+           {% endif %}
+        {% endfor %}
 {% endblock %}
  
