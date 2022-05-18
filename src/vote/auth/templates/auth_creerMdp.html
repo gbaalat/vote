@@ -3,9 +3,9 @@
 {% block section %}
 	<h2 id="haut">Définition du mot de passe.</h2>
 	<p> Les mots de passes ne sont pas cryptés sur notre base de données.</br>
-		En conséquence, ne mettez pas un mot de passe que vous utilisez pour d'autres site.
+		En conséquence, ne mettez pas un mot de passe que vous utilisez pour d'autres sites.
 	</p>
-	<h2>
+	<h2 id = "inputinscription">
 		<form id="form" action="{{ url_for('auth_bp.creerMdp', public_id = public_id) }}" method="post"> 
 			<input type="password" id="email" name="mdp" placeholder="Mot de passe...">
 			<button>Entrer</button>

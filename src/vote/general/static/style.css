@@ -7,14 +7,14 @@ body{
 	font-family: 'Century Gothic', Calibri, serif;
 	font-size: 13px;
 	text-align: center;
-	background-color:#341e40;
-	width:80%;
+	width:90%;
 	margin-left:5%;
 	margin-right:5%;
 	color:#f0984b;
 }
 section{
 	grid-template-rows: auto;
+	background-color:#341e40;
 }
 aside{
 	grid-template-rows: auto;
@@ -60,7 +60,6 @@ h2{
 	position: absolute;
 	left: 50%;
 }
-
 table,
 td {
     border: 1px solid #f0984b;
@@ -77,11 +76,12 @@ header{
 	background-image:linear-gradient(to right,#ad3e4f, #341e40);
 	grid-template-rows: 100px;
 }
-
 #inputconnect{
-	height: 30%
+	height: 83px
 }
-
+#email{
+	margin-top: 3px;
+}
 #menu{
  	list-style-type:none;
 	background-color:#b9204d;
@@ -140,4 +140,151 @@ html{
 
 ul{
 	list-style: none;
+}
+@media (max-width : 26cm){
+	html{
+		height : 100%;
+	}
+	body{
+		width : 100%;
+		margin : 0%;
+		font-size : 140%;
+		grid-template-rows : 120px auto 75px;
+		height : 100%;
+	}
+	#haut{
+		font-size : 160%;
+		height : 45px;
+	}
+	h1{
+		font-size : 65px;
+	}
+	h2{
+		height : 40px;
+	}
+	h3{
+		display : grid;
+		grid-template-rows : auto 29px auto;
+		margin-top : 9px;
+	}
+	#seconnecter{
+		grid-row : 1;
+	}
+	#sinscrire{
+		grid-row : 3;
+	}
+	#auth{
+		font-size : 29px;
+		left : 73%;
+	}
+	input{
+		height : 40px;
+		width : 50%;
+		font-size : 21px;
+	}
+	#email{
+		margin-top : 5px;
+	}
+	#envoi{
+		height : 50px;
+		width : 100px;
+		font-size : 19px;
+		margin : 7px;
+	}
+	#inputconnect{
+		height : 162px;
+	}
+	header{
+		position: fixed;
+		width: 100%;
+		height: 120px;
+	}
+	section{
+		grid-row : 2;
+	}
+	footer{
+		grid-row : 3;
+	}
+	button{
+		height: 50px;
+		width: 75px;
+		font-size: 17px;
+	}
+	#inputinscription{
+		height: 58px;
+	}
+}
+@media (orientation : portrait){
+	html{
+		height : 100%;
+	}
+	body{
+		width :100%;
+		margin : 0%;
+		font-size : 200%;
+		grid-template-rows : 140px auto 105px;
+		height : 100%;
+	}
+	#haut{
+		font-size : 160%;
+		height : 65px;
+	}
+	h1{
+		font-size : 80px;
+	}
+	h2{
+		height : 59px;
+	}
+	h3{
+		display : grid;
+		grid-template-rows : auto 40px auto;
+		margin-top : 9px;
+		font-size: 34;
+	}
+	#seconnecter{
+		grid-row : 1;
+	}
+	#sinscrire{
+		grid-row : 3;
+	}
+	#auth{
+		font-size : 31px;
+		left : 72%;
+	}
+	input{
+		height : 70px;
+		width : 65%;
+		font-size : 35px;
+	}
+	#email{
+		margin-top : 7px;
+	}
+	#envoi{
+		height : 70px;
+		width : 140px;
+		font-size : 27px;
+		margin : 15px;
+	}
+	#inputconnect{
+		height : 220px;
+	}
+	#inputinscription{
+		height: 90px;
+	}
+	header{
+		position: fixed;
+		width: 100%;
+		height: 140px;
+	}
+	section{
+		grid-row : 2;
+	}
+	footer{
+		grid-row : 3;
+	}
+	button{
+		height: 70px;
+		width: 105px;
+		font-size: 26px;
+	}
 }

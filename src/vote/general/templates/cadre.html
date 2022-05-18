@@ -11,12 +11,11 @@
 	    <a href="{{ url_for('gen_bp.home') }}">
 			<h1 class="linkedImage">Bal 2022</h1>
 		</a>
+		<h3 id="auth">
+			<a id="seconnecter" href="{{ url_for('auth_bp.connexion') }}" style:"color:#f0984b">Se connecter</a>
+			<a id="sinscrire" href="{{ url_for('auth_bp.inscription') }}" style:"color:#f0984b">S'inscrire</a>
+		</h3>
     </header>
-
-	<h3 id="auth">
-		<a href="{{ url_for('auth_bp.connexion') }}" style:"color:#f0984b">Se connecter</a></br>
-		<a href="{{ url_for('auth_bp.inscription') }}" style:"color:#f0984b">S'inscrire</a>
-	</h3>
 	
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
