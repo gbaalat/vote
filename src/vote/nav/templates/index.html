@@ -24,13 +24,22 @@
            </h2>
            {% if cat.ouvert %}
            <p>Top 3</br></p>
-			
+           {%if "id" in session: %}
+           {% set aVote = Vote.query.filter(Vote.id_categorie == cat.id and Vote.id_user == session["id"]).first()%}
+           {%if aVote != None:%}
+               <p>Vous avez voté</p> 
+           {%else:%}
+               <p>Vous n'avez pas encore voté</p>
+           {%endif%}
+           {%endif%}
             <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
             <a href="#haut">retour en haut de la page</a>
-            {% endif %}
            </h4>
-           {% if not cat.ouvert %}
+           {% else %}
            <p>Votes Fermés</p>
+
+           
+           <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
            <a href="#haut">retour en haut de la page</a>
            {% endif %}
         {% endfor %}

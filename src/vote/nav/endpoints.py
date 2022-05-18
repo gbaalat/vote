@@ -13,4 +13,8 @@ nav_bp = Blueprint(
 @nav_bp.route("/")
 def nav():
     categories = Categorie.query.all()
+
+    for elt in categories:
+        elt
     return render_template("index.html", categories=categories)
+
