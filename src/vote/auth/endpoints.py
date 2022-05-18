@@ -15,12 +15,13 @@ auth_bp = Blueprint(
 def inscription():
     """Page d'insciption, l'utilisateur y rentre son adresse mail, envoi du mail quand la méthode est POST"""
     if request.method == "POST":
-        if test_utilisateur(request.form["email"]):
-            public_id = creer_utilisateur(request.form["email"])
+        email=request.form["email"]
+        if test_utilisateur(email):
+            public_id = creer_utilisateur(email)
             envoi_mail(
-                render_template("mail.html", public_id=public_id), request.form["email"]
+                render_template("mail.html", public_id=public_id), email
             )
-            flash("Un mail a été envoyé dans votre boîte mail.")
+            flash(f"Un mail a été envoyé à cette adresse : {email}")
         else:
             flash("Adresse mail déjà utilisée")
     return render_template("auth_inscription.html")
