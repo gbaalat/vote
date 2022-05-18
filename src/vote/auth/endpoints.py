@@ -53,7 +53,10 @@ def connexion():
         else:
             session["id"] = u.id
             return redirect(url_for("nav_bp.nav"))
-    return render_template("auth_connexion.html")
+    if "id" in session:
+        return redirect(url_for("nav_bp.nav"))
+    else:
+        return render_template("auth_connexion.html")
 
 
 @auth_bp.route("/deconnexion")
