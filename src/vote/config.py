@@ -22,14 +22,13 @@ class Config:
     MAIL_USERNAME = "nsi.immac.bal@gmail.com"
     MAIL_PASSWORD = "Balimmac64"
 
-
     MAIL_DEBUG = True
     MAIL_SUPPRESS_SEND = False
 
-    MAIL_DEFAULT_SENDER = ("Bal de l'immac","nsi.bal@immac.com")
+    MAIL_DEFAULT_SENDER = ("Bal de l'immac", "nsi.bal@immac.com")
     MAIL_MAX_EMAILS = None
     MAIL_ASCII_ATTACHMENTS = False
-    
+
 
 class TestingConfig(Config):
     TESTING = True

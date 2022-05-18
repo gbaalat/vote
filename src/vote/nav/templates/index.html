@@ -1,119 +1,37 @@
 {% extends 'cadre.html' %}
-
+ 
 {% block section %}
-	<h2 id="haut">Catégories</h2>
-		<form id="form"> 
-			<input type="search" id="query" name="q" placeholder="Chercher">
-			<button>Chercher</button>
-		</form>
-		<h2 id="Gen">Général</h2>
-		<p>Général</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-
-		</p>
-		<a href="http://127.0.0.1:5000/vote" style:"color:#f0984b">Voter</a></br>
-		<a href="#haut">retour en haut de la page</a>
-
-
-		{% for i in categories %}
-			<h2 id="Gen">Général</h2>
-			<p>Général</br>
-			blablablablablablablablablablablablablablablabla</br>
-			blablablablablablablablablablablablablablablabla</br>
-			blablablablablablablablablablablablablablablabla</br>
-			blablablablablablablablablablablablablablablabla</br>
-			blablablablablablablablablablablablablablablabla</br>
-			blablablablablablablablablablablablablablablabla</br>
-
-			</p>
-			<a href="{{ url_for('votes_bp.vote', categorie_id = i.id) }}" style:"color:#f0984b">Voter</a></br>
-			<a href="#haut">retour en haut de la page</a>
-		{% endfor %}
-
-		<h2 id="Cat1">Catégorie 1</h2>
-		<p>... (beaucoup de texte) ...</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabl</br>
-		</p>
-		<a href="http://127.0.0.1:5000/vote" style:"color:#f0984b">Voter</a></br>
-		<a href="#haut">retour en haut de la page</a>
-		<h2 id="Cat2">Catégorie 2</h2>
-		<p>... (beaucoup de texte) ...</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabl</br>
-		</p>
-		<a href="http://127.0.0.1:5000/vote" style:"color:#f0984b">Voter</a></br>
-		<a href="#haut">retour en haut de la page</a>
-		<h2 id="Cat3">Catégorie 3</h2>
-		<p>... (beaucoup de texte) ...</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabla</br>
-		blablablablablablablablablablablablablablablabl</br>
-		</p>
-		<a href="http://127.0.0.1:5000/vote" style:"color:#f0984b">Voter</a></br>
-		<p><a href="#haut">retour en haut de la page</a></p>
+   <h2 id="haut">Catégories</h2>
+ 
+       {% for cat in categories %}
+           <h2 id="Gen">Catégorie
+           {% if cat.genre == "M" %}
+               Homme
+           {% endif %}
+           {% if cat.genre == "F" %}
+               Femme
+           {% endif %}
+           {% if cat.niveau == "T" %}
+               Terminale
+           {% endif %}
+           {% if cat.niveau == "P" %}
+               Première
+           {% endif %}
+           {% if cat.niveau == "S" %}
+               Seconde
+           {% endif %}
+          
+           </h2>
+           <p>Top 3</br>
+           blablablablablablablablablablablablablablablabla</br>
+           blablablablablablablablablablablablablablablabla</br>
+           blablablablablablablablablablablablablablablabla</br>
+           blablablablablablablablablablablablablablablabla</br>
+           blablablablablablablablablablablablablablablabla</br>
+           blablablablablablablablablablablablablablablabla</br>
+           </p>
+           <a href="{{ url_for('votes_bp.vote', categorie_id = cat.id) }}" style:"color:#f0984b">Voter</a></br>
+           <a href="#haut">retour en haut de la page</a>
+       {% endfor %}
 {% endblock %}
+ 

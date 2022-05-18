@@ -5,6 +5,7 @@
 from vote import db
 from uuid import uuid4
 
+
 class Utilisateur(db.Model):
     """Modèle utilisateur pour la base de données"""
 
@@ -50,7 +51,6 @@ class Utilisateur(db.Model):
         db.session.commit()
         return True
 
-
     @classmethod
     def verify_email(cls, email):
         obj = cls.find_by_email(email)
@@ -66,6 +66,7 @@ class Utilisateur(db.Model):
             if u.mdp == mdp:
                 return True
         return False
+
 
 # Exemples d'utilisation de la classe
 """
