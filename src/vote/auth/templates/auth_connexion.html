@@ -2,15 +2,30 @@
 
 {% block section %}
 	<h2 id="haut">Connexion</h2>
-	<p> Explications blablablabalbalblablablabla</br>
-		blablablablablablablablablablalbalbalblbalba</br>
+	<p> Connectez-vous pour pouvoir voter !</br>
+		Si vous n'avez pas de compte, inscrivez-vous</br>
 	</p>
 
 	<h2 id="inputconnect">
 		<form id="form" method="post" action="{{url_for('auth_bp.connexion')}}"> 
 			<input type="text" id="email" name="email" placeholder="Entrer votre email..." required>
-			<input type="password" id="mdp" name="mdp" placeholder="Mot de passe..." required></br>
+			<input type="password" id="mdp" name="mdp" placeholder="Mot de passe..." required>
 			<input type="submit" id="envoi" value="Entrer"></br>
+			<input type="checkbox" id="affiche_mdp" onclick="Afficher()">Afficher le mot de passe
+			<script>
+				function Afficher()
+				{
+					var input = document.getElementById("mdp");
+					if (input.type === "password")
+					{
+						input.type = "text";
+					}
+					else
+					{
+						input.type = "password";
+					}
+				}
+			</script></br>
 			<a href="http://127.0.0.1:5000{{url_for('auth_bp.motDePasseOublie')}}">Mot de passe oublié ?</a>
 		</form>
 	</h2>

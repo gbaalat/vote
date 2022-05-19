@@ -34,12 +34,14 @@ footer{
 	
 }
 h1{
-	background: url(loog.png) no-repeat left top;
-	height: 100px;
+	background: url(logo2.png) no-repeat left top;
+	height: 125px;
 	width: 100%;
-	margin-top:1px;
+	margin-top:0;
+	margin-bottom:0;
 	color: #fcd22e;
 	font-size: 40px;
+	background-size: 125px;
 }
 
 
@@ -70,7 +72,12 @@ td {
 	position: absolute;
 	top: 0px;
 	left: 67%;
-	
+}
+#bout{
+	border-color:#6c3a4e;
+	border: 4px ridge;
+	border-radius:2px;
+	border-width: 3px;
 }
 header{
 	background-image:linear-gradient(to right,#ad3e4f, #341e40);
@@ -120,10 +127,12 @@ a:link {
   color: #fcd22e;
   background-color: transparent;
   text-decoration: none;
+  border-radius:3px;
+  
 }
 
 a:visited {
-  color: #ff6362;
+  color: #f0984b;
   background-color: transparent;
   text-decoration: none;
 }
@@ -132,6 +141,9 @@ a:hover {
   color: #f8f088;
   background-color: transparent;
   text-decoration: underline;
+  background-image:linear-gradient(to right, #341e40,#6c3a4e);
+  border-radius:3px;
+  border-width: 10%;
 }
 	
 html{
@@ -162,26 +174,31 @@ table{
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
 	grid-auto-rows: minmax(100px, auto);
+	padding-top: 5%;
 }
 .one {
 	grid-column: 1;
 	grid-row: 1;
 }
 .two {
-	grid-column: 3;
+	grid-column: 2;
 	grid-row: 1;
 }
 .three {
-	grid-column: 2;
-	grid-row: 2;
+	grid-column: 3;
+	grid-row: 1;
 }
 .four {
 	grid-column: 1;
-	grid-row: 3;
+	grid-row: 2;
 }
 .five {
+	grid-column: 2;
+	grid-row: 2;
+}
+.six {
 	grid-column: 3;
-	grid-row: 3;
+	grid-row: 2;
 }
 @media (max-width : 26cm){
 	html{

@@ -4,8 +4,8 @@
     <h2 id="haut">Catégories</h2>
  
     {% for data_cat in data %}
-        <h2 id="Gen">{{ data_cat.nom }}</h2>
-        {% if data_cat.ouvert %}
+        <h2 id="Gen">Catégorie {{ data_cat.nom }}</h2>
+        
             <p>Top 3</p>
             <ol>
                 {% if data_cat.top3[1] %}
@@ -40,11 +40,12 @@
                 {%endif%}
                 
             </ol>
+        {% if data_cat.ouvert %}
             {%if data_cat.aVote %}
                 <p>Vous avez voté</p> 
             {%else:%}
                 <p>
-                    <a class="voter" href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" style:"color:#f0984b">Voter</a>
+                    <a href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" id="bout">Voter</a>
                 </p>
             {%endif%}
             
@@ -52,10 +53,16 @@
         {% else %}
             <p>Votes Fermés</p>
 
-        
-            <a href="" style:"color:#f0984b">Le vote est fermé</a>
+
         {% endif %}
+
+        {% if admin %}
+
+        <p><a href="{{ url_for('nav_bp.activeCategorie', categorie_id=data_cat.id) }}">Ouvrir/Fermer</a></p>
+
+        {% endif %}
+
     {% endfor %}
-    </br></br><a href="#haut">retour en haut de la page</a>
+    <a href="#haut">retour en haut de la page</a>
 {% endblock %}
  
