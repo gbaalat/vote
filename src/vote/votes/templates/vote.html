@@ -17,7 +17,7 @@
 
 							<form method="post" action= "{{url_for('votes_bp.vote', categorie_id = cat.id)}}">
 								<input type="hidden" name="idCandidat"  value="{{candidat['identifiant']}}" >
-								<input type="submit" value="Voter" />
+								<input class="voter2" type="submit" value="Voter" />
 							</form>
 						</td>
 						<td>{{candidat['nom']}}</td>

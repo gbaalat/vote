@@ -151,6 +151,38 @@ html{
 ul{
 	list-style: none;
 }
+table{
+	margin-left: auto;
+	  margin-right: auto;
+	width: 50%;
+}
+
+.equipe {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+.one {
+	grid-column: 1;
+	grid-row: 1;
+}
+.two {
+	grid-column: 3;
+	grid-row: 1;
+}
+.three {
+	grid-column: 2;
+	grid-row: 2;
+}
+.four {
+	grid-column: 1;
+	grid-row: 3;
+}
+.five {
+	grid-column: 3;
+	grid-row: 3;
+}
 @media (max-width : 26cm){
 	html{
 		height : 100%;
@@ -239,6 +271,11 @@ ul{
 		font-size: 25px;
 		font-weight: bold;
 	}
+	.voter2{
+		width : 120px;
+		height : 80px;
+		margin : 10px
+	}
 }
 @media (orientation : portrait){
 	html{
@@ -304,57 +341,30 @@ ul{
 		grid-row : 4;
 	}
 	button{
-		height: 70px;
-		width: 105px;
-		font-size: 26px;
+		height : 70px;
+		width : 105px;
+		font-size : 26px;
 	}
 	.liencompte{
-		width: 322px;
-		height: 90px;
-		font-size: 35px;
+		width : 322px;
+		height : 90px;
+		font-size : 35px;
 	}
 	.flashes{
-		grid-row: 2;
-		font-size: 35px;
+		grid-row : 2;
+		font-size : 35px;
 	}
 	.voter{
 		padding-top : 35px;
 		padding-right : 60px;
 		padding-left : 60px;
-		padding-bottom: 30px;
-		font-size: 45px;
-		font-weight: bold;
+		padding-bottom : 30px;
+		font-size : 45px;
+		font-weight : bold;
 	}
-}
-table{
-	margin-left: auto;
-  	margin-right: auto;
-	width: 50%;
-}
-
-.equipe {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
-	grid-auto-rows: minmax(100px, auto);
-}
-.one {
-	grid-column: 1;
-	grid-row: 1;
-}
-.two {
-	grid-column: 3;
-	grid-row: 1;
-}
-.three {
-	grid-column: 2;
-	grid-row: 2;
-}
-.four {
-	grid-column: 1;
-	grid-row: 3;
-}
-.five {
-	grid-column: 3;
-	grid-row: 3;
+	.voter2{
+		width : 150px;
+		height : 110px;
+		margin : 15px
+	}
 }

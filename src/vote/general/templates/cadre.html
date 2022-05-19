@@ -21,18 +21,6 @@
 		</h3>
     </header>
 
-<<<<<<< HEAD
-=======
-	<h3 id="auth">
-		{% if session['id'] %}
-		<a href="{{ url_for('auth_bp.deconnexion') }}" style:"color:#f0984b">Se déconnecter</a></br>
-		{% else %}
-		<a href="{{ url_for('auth_bp.connexion') }}" style:"color:#f0984b">Se connecter</a></br>
-		<a href="{{ url_for('auth_bp.inscription') }}" style:"color:#f0984b">S'inscrire</a>
-		{% endif %}
-	</h3>
-	
->>>>>>> refs/remotes/origin/main
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
 			<ul class=flashes>
