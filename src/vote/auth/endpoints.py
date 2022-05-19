@@ -24,7 +24,10 @@ def inscription():
             flash(f"Un mail a été envoyé à cette adresse : {email}")
         else:
             flash("Adresse mail déjà utilisée")
-    return render_template("auth_inscription.html")
+    if "id" in session:
+        return redirect(url_for("nav_bp.nav")),flash("Déconnectez-vous pour vous inscrire.")
+    else:
+        return render_template("auth_inscription.html")
 
 
 @auth_bp.route("/creerMdp/<string:public_id>", methods=["GET", "POST"])
