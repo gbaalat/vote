@@ -11,6 +11,13 @@ class Categorie(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     niveau = db.Column(db.String(1), nullable=False)
     genre = db.Column(db.String(1), nullable=False)
+    ouvert = True
 
     def __repr__(self):
         return f"<Categorie id={self.id} niveau={self.niveau}, genre={self.genre}>"
+    def ouverture(self):
+        if self.ouvert == True:
+            self.ouvert = False
+        else:
+            self.ouvert = True
+

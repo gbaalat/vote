@@ -53,7 +53,10 @@ def connexion():
         else:
             session["id"] = u.id
             return redirect(url_for("nav_bp.nav"))
-    return render_template("auth_connexion.html")
+    if "id" in session:
+        return redirect(url_for("nav_bp.nav")),flash("Déconnectez-vous pour vous connecter à un autre compte.")
+    else:
+        return render_template("auth_connexion.html")
 
 
 @auth_bp.route("/deconnexion")
@@ -63,9 +66,22 @@ def deconnexion():
     return redirect(url_for("auth_bp.connexion"))
 
 
-@auth_bp.route("/motDePasseOublie")
+@auth_bp.route("/motDePasseOublie", methods=["GET", "POST"])
 def motDePasseOublie():
-    pass
+    if request.method == "POST":
+        email = request.form["email"]
+        email = email.strip()
+        u = Utilisateur.query.filter_by(email=email).first()
+        if u is None or not(u.verify_email(email)):
+            flash("Email incorrect, veuillez réessayer")
+            return redirect(url_for('auth_bp.motDePasseOublie'))
+        else:
+            public_id = u.public_id
+            envoi_mail(
+                render_template("mail_oubli_mdp.html", public_id = public_id), email
+            )
+            flash(f"Un mail a été envoyé à cette adresse : {email}")
+    return render_template("auth_oubli_mdp.html")
 
 
 @auth_bp.route("/changerMotDePasse")
