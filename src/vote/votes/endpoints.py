@@ -20,18 +20,22 @@ votes_bp = Blueprint(
 @votes_bp.route("/<int:categorie_id>", methods=["GET", "POST"])
 @connexion_requise
 def vote(categorie_id):
-    if request.method == "GET":
-        listeCatVotees = categoriesVotees(session["id"])
-        if categorie_id in listeCatVotees:
-            return render_template("mauvaisVote.html")
-        else:
-            return render_template(
-                "vote.html",
-                content=obtenirCandidats(categorie_id),
-                cat=obtenirCategorie(categorie_id),
-                dico=dico,
-            )
-    elif request.method == "POST":
-        idCandidat = request.form["idCandidat"]
-        jeVote(categorie_id, idCandidat, session["id"])
+    cate = obtenirCategorie(categorie_id)
+    if cate.ouvert == True:
+        if request.method == "GET":
+            listeCatVotees = categoriesVotees(session["id"])
+            if categorie_id in listeCatVotees:
+                return render_template("mauvaisVote.html")
+            else:
+                return render_template(
+                    "vote.html",
+                    content=obtenirCandidats(categorie_id),
+                    cat=obtenirCategorie(categorie_id),
+                    dico=dico,
+                )
+        elif request.method == "POST":
+            idCandidat = request.form["idCandidat"]
+            jeVote(categorie_id, idCandidat, session["id"])
+            return redirect(url_for("nav_bp.nav"))
+    else:
         return redirect(url_for("nav_bp.nav"))
