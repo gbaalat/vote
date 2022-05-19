@@ -8,12 +8,37 @@
         {% if data_cat.ouvert %}
             <p>Top 3</p>
             <ol>
-                {% for leader in data_cat.top3 %}
-                    <li>
-                        <span class="nomCandidat">{{ leader[1] }} {{ leader[2] }}</span>
-                        <span class="total">{{ leader[3] }}</span>
-                    </li>
-                {% endfor %}
+                {% if data_cat.top3[1] %}
+                <li>
+                    {% for place1 in data_cat.top3[1] %}
+                    <p>
+                        <span class="nomCandidat">{{ place1[1] }} {{ place1[2] }} : </span>
+                        <span class="total">{{ place1[3] }} votes</span>
+                    </p>
+                    {% endfor %}
+                </li>
+                {%endif%}
+                {% if data_cat.top3[2] %}
+                <li>
+                    {% for place2 in data_cat.top3[2] %}
+                    <p>
+                        <span class="nomCandidat">{{ place2[1] }} {{ place2[2] }} : </span>
+                        <span class="total">{{ place2[3] }} votes</span>
+                    </p>
+                    {% endfor %}
+                </li>
+                {%endif%}
+                {% if data_cat.top3[3] %}
+                <li>
+                    {% for place3 in data_cat.top3[3] %}
+                    <p>
+                        <span class="nomCandidat">{{ place3[1] }} {{ place3[2] }} : </span>
+                        <span class="total">{{ place3[3] }} votes</span>
+                    </p>
+                    {% endfor %}
+                </li>
+                {%endif%}
+                
             </ol>
             {%if data_cat.aVote %}
                 <p>Vous avez voté</p> 
