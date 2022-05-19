@@ -45,7 +45,7 @@ h1{
 
 h2{
 	background-image:linear-gradient(to right, #341e40,#6c3a4e, #341e40);
-	height: 25px;
+	height: 31px;
 	width: 100%;
 	margin-top:1px;
 	color: #fcd22e;
@@ -139,7 +139,7 @@ html{
 }
 
 .flashes{
-	width: 100%;
+	width: auto;
 	color: #fc9700;
 	font-size: 20px;
 	font-weight: bold;
@@ -157,7 +157,7 @@ ul{
 		width : 100%;
 		margin : 0%;
 		font-size : 140%;
-		grid-template-rows : 120px auto 75px;
+		grid-template-rows : 120px max-content auto 75px;
 		height : 100%;
 	}
 	#haut{
@@ -170,11 +170,6 @@ ul{
 	h2{
 		height : 40px;
 	}
-	h3{
-		display : grid;
-		grid-template-rows : auto 29px auto;
-		margin-top : 9px;
-	}
 	#seconnecter{
 		grid-row : 1;
 	}
@@ -183,7 +178,8 @@ ul{
 	}
 	#auth{
 		font-size : 29px;
-		left : 73%;
+		display : grid;
+		margin-top : 0px;
 	}
 	input{
 		height : 40px;
@@ -203,23 +199,35 @@ ul{
 		height : 162px;
 	}
 	header{
-		position: fixed;
-		width: 100%;
-		height: 120px;
+		position : fixed;
+		width : 100%;
+		height : 120px;
 	}
 	section{
-		grid-row : 2;
-	}
-	footer{
 		grid-row : 3;
 	}
+	footer{
+		grid-row : 4;
+	}
 	button{
-		height: 50px;
-		width: 75px;
-		font-size: 17px;
+		height : 50px;
+		width : 75px;
+		font-size : 17px;
 	}
 	#inputinscription{
-		height: 58px;
+		height : 58px;
+	}
+	.position{
+		width : 323px;
+		height : 60px;
+	}
+	.liencompte{
+		width: 323px;
+		height: 60px;
+	}
+	.flashes{
+		grid-row: 2;
+		font-size: 26px;
 	}
 }
 @media (orientation : portrait){
@@ -230,7 +238,7 @@ ul{
 		width :100%;
 		margin : 0%;
 		font-size : 200%;
-		grid-template-rows : 140px auto 105px;
+		grid-template-rows : 180px max-content auto 105px;
 		height : 100%;
 	}
 	#haut{
@@ -243,12 +251,6 @@ ul{
 	h2{
 		height : 59px;
 	}
-	h3{
-		display : grid;
-		grid-template-rows : auto 40px auto;
-		margin-top : 9px;
-		font-size: 34;
-	}
 	#seconnecter{
 		grid-row : 1;
 	}
@@ -256,8 +258,9 @@ ul{
 		grid-row : 3;
 	}
 	#auth{
+		display : grid;
+		margin-top : 0px;
 		font-size : 31px;
-		left : 72%;
 	}
 	input{
 		height : 70px;
@@ -265,7 +268,7 @@ ul{
 		font-size : 35px;
 	}
 	#email{
-		margin-top : 7px;
+		margin-top : 10px;
 	}
 	#envoi{
 		height : 70px;
@@ -274,25 +277,33 @@ ul{
 		margin : 15px;
 	}
 	#inputconnect{
-		height : 220px;
+		height : 260px;
 	}
 	#inputinscription{
-		height: 90px;
+		height: 97px;
 	}
 	header{
 		position: fixed;
 		width: 100%;
-		height: 140px;
+		height: 180px;
 	}
 	section{
-		grid-row : 2;
+		grid-row : 3;
 	}
 	footer{
-		grid-row : 3;
+		grid-row : 4;
 	}
 	button{
 		height: 70px;
 		width: 105px;
 		font-size: 26px;
+	}
+	.liencompte{
+		width: 322px;
+		height: 90px;
+	}
+	.flashes{
+		grid-row: 2;
+		font-size: 35px;
 	}
 }
