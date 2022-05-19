@@ -135,7 +135,9 @@ a:hover {
 }
 	
 html{
-	background-color:#000000;
+	background-color:#341e40;
+	height: 100%;
+	width: 100%;
 }
 
 .flashes{
@@ -323,4 +325,36 @@ ul{
 		font-size: 45px;
 		font-weight: bold;
 	}
+}
+table{
+	margin-left: auto;
+  	margin-right: auto;
+	width: 50%;
+}
+
+.equipe {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+.one {
+	grid-column: 1;
+	grid-row: 1;
+}
+.two {
+	grid-column: 3;
+	grid-row: 1;
+}
+.three {
+	grid-column: 2;
+	grid-row: 2;
+}
+.four {
+	grid-column: 1;
+	grid-row: 3;
+}
+.five {
+	grid-column: 3;
+	grid-row: 3;
 }
