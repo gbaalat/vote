@@ -19,11 +19,13 @@ def create_app(config_name):
     from vote.nav.endpoints import nav_bp
     from vote.votes.endpoints import votes_bp
     from vote.general.endpoints import gen_bp
+    from vote.team.endpoints import team_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(nav_bp)
     app.register_blueprint(votes_bp)
     app.register_blueprint(gen_bp)
+    app.register_blueprint(team_bp)
 
     db.init_app(app)
     migrate.init_app(app, db)
