@@ -4,7 +4,7 @@
     <h2 id="haut">Catégories</h2>
  
     {% for data_cat in data %}
-        <h2 id="Gen">Catégorie {{ data_cat.nom }}</h2>
+        <h2 id="Gen">{{ data_cat.nom }}</h2>
         {% if data_cat.ouvert %}
             <p>Top 3</p>
             <ol>
@@ -19,19 +19,18 @@
                 <p>Vous avez voté</p> 
             {%else:%}
                 <p>
-                    <a href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" style:"color:#f0984b">Voter</a>
+                    <a class="voter" href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" style:"color:#f0984b">Voter</a>
                 </p>
             {%endif%}
             
-            <a href="#haut">retour en haut de la page</a>
         </h4>
         {% else %}
             <p>Votes Fermés</p>
 
         
-            <a href="" style:"color:#f0984b">Le vote est fermé</a></br>
-            <a href="#haut">retour en haut de la page</a>
+            <a href="" style:"color:#f0984b">Le vote est fermé</a>
         {% endif %}
     {% endfor %}
+    <a href="#haut">retour en haut de la page</a>
 {% endblock %}
  

@@ -190,13 +190,13 @@ ul{
 		margin-top : 5px;
 	}
 	#envoi{
-		height : 50px;
-		width : 100px;
-		font-size : 19px;
+		height : 65px;
+		width : 130px;
+		font-size : 25px;
 		margin : 7px;
 	}
 	#inputconnect{
-		height : 162px;
+		height : 220px;
 	}
 	header{
 		position : fixed;
@@ -222,12 +222,20 @@ ul{
 		height : 60px;
 	}
 	.liencompte{
-		width: 323px;
-		height: 60px;
+		width : 323px;
+		height : 60px;
 	}
 	.flashes{
-		grid-row: 2;
-		font-size: 26px;
+		grid-row : 2;
+		font-size : 26px;
+	}
+	.voter{
+		padding-top : 25px;
+		padding-right : 50px;
+		padding-left : 50px;
+		padding-bottom: 20px;
+		font-size: 25px;
+		font-weight: bold;
 	}
 }
 @media (orientation : portrait){
@@ -271,13 +279,13 @@ ul{
 		margin-top : 10px;
 	}
 	#envoi{
-		height : 70px;
-		width : 140px;
-		font-size : 27px;
+		height : 90px;
+		width : 180px;
+		font-size : 40px;
 		margin : 15px;
 	}
 	#inputconnect{
-		height : 260px;
+		height : 346px;
 	}
 	#inputinscription{
 		height: 97px;
@@ -301,9 +309,18 @@ ul{
 	.liencompte{
 		width: 322px;
 		height: 90px;
+		font-size: 35px;
 	}
 	.flashes{
 		grid-row: 2;
 		font-size: 35px;
+	}
+	.voter{
+		padding-top : 35px;
+		padding-right : 60px;
+		padding-left : 60px;
+		padding-bottom: 30px;
+		font-size: 45px;
+		font-weight: bold;
 	}
 }
