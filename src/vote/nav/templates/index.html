@@ -11,30 +11,24 @@
                 {% if data_cat.top3[1] %}
                 <li>
                     {% for place1 in data_cat.top3[1] %}
-                    <p>
-                        <span class="nomCandidat">{{ place1[1] }} {{ place1[2] }} : </span>
-                        <span class="total">{{ place1[3] }} votes</span>
-                    </p>
+                    <span class="nomCandidat">{{ place1[1] }} {{ place1[2] }} : </span>
+                    <span class="total">{{ place1[3] }} votes</span>
                     {% endfor %}
                 </li>
                 {%endif%}
                 {% if data_cat.top3[2] %}
                 <li>
                     {% for place2 in data_cat.top3[2] %}
-                    <p>
-                        <span class="nomCandidat">{{ place2[1] }} {{ place2[2] }} : </span>
-                        <span class="total">{{ place2[3] }} votes</span>
-                    </p>
+                    <span class="nomCandidat">{{ place2[1] }} {{ place2[2] }} : </span>
+                    <span class="total">{{ place2[3] }} votes</span>
                     {% endfor %}
                 </li>
                 {%endif%}
                 {% if data_cat.top3[3] %}
                 <li>
                     {% for place3 in data_cat.top3[3] %}
-                    <p>
-                        <span class="nomCandidat">{{ place3[1] }} {{ place3[2] }} : </span>
-                        <span class="total">{{ place3[3] }} votes</span>
-                    </p>
+                    <span class="nomCandidat">{{ place3[1] }} {{ place3[2] }} : </span>
+                    <span class="total">{{ place3[3] }} votes</span>
                     {% endfor %}
                 </li>
                 {%endif%}
@@ -45,7 +39,7 @@
                 <p>Vous avez voté</p> 
             {%else:%}
                 <p>
-                    <a href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}" id="bout">Voter</a>
+                    <a id="bout" class="voter" href="{{ url_for('votes_bp.vote', categorie_id = data_cat.id) }}">Voter</a>
                 </p>
             {%endif%}
             

@@ -13,10 +13,10 @@
 		</a>
 		<h3 id="auth">
 			{% if session['id'] %}
-			<a href="{{ url_for('auth_bp.deconnexion') }}" style="color:#ff6362" class="liencompte">Déconnexion</a>
+			<a href="{{ url_for('auth_bp.deconnexion') }}" class="liencompte">Déconnexion</a>
 			{% else %}
-			<a href="{{ url_for('auth_bp.connexion') }}" style="color:#ff6362" class="liencompte">Se connecter</a><br>
-			<a href="{{ url_for('auth_bp.inscription') }}" style="color:#ff6362" class="liencompte">S'inscrire</a>
+			<a href="{{ url_for('auth_bp.connexion') }}" class="liencompte">Se connecter</a><br>
+			<a href="{{ url_for('auth_bp.inscription') }}" class="liencompte">S'inscrire</a>
 			{% endif %}
 		</h3>
     </header>
@@ -37,7 +37,7 @@
 
 	<footer>
 		<p> Terminales Spé NSI 2021-2022</p>
-		<a href="{{ url_for('team_bp.team') }}" style:"color:#f0984b">L'équipe de developpement</a>
+		<a href="{{ url_for('team_bp.team') }}" style:"color:#f0984b">L'équipe de développement</a>
 	</footer>
 </body>
 </html> 

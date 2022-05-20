@@ -68,23 +68,23 @@ td {
 }
 
 #auth{
+	display: grid;
 	font-size: 13px;
 	position: absolute;
 	top: 0px;
-	left: 67%;
+	right: 100px;
 }
 #bout{
 	border-color:#6c3a4e;
-	border: 4px ridge;
+	border: 3px ridge;
 	border-radius:2px;
-	border-width: 3px;
 }
 header{
 	background-image:linear-gradient(to right,#ad3e4f, #341e40);
 	grid-template-rows: 100px;
 }
 #inputconnect{
-	height: 83px
+	height: 103px;
 }
 #email{
 	margin-top: 3px;
@@ -208,7 +208,7 @@ table{
 		width : 100%;
 		margin : 0%;
 		font-size : 140%;
-		grid-template-rows : 120px max-content auto 75px;
+		grid-template-rows : 120px max-content auto max-content;
 		height : 100%;
 	}
 	#haut{
@@ -229,8 +229,9 @@ table{
 	}
 	#auth{
 		font-size : 29px;
-		display : grid;
-		margin-top : 0px;
+		right : 0px;
+		margin : 0px;
+		width: fit-content;
 	}
 	input{
 		height : 40px;
@@ -247,7 +248,7 @@ table{
 		margin : 7px;
 	}
 	#inputconnect{
-		height : 220px;
+		height : 270px;
 	}
 	header{
 		position : fixed;
@@ -273,25 +274,31 @@ table{
 		height : 60px;
 	}
 	.liencompte{
-		width : 323px;
-		height : 60px;
+		width : 280px;
+		height : 34px;
+		border : 13px ridge;
 	}
 	.flashes{
 		grid-row : 2;
 		font-size : 26px;
 	}
-	.voter{
-		padding-top : 25px;
-		padding-right : 50px;
-		padding-left : 50px;
-		padding-bottom: 20px;
+	#bout{
+		padding-top : 10px;
+		padding-right : 40px;
+		padding-left : 40px;
+		padding-bottom: 10px;
 		font-size: 25px;
 		font-weight: bold;
+		border-width: 10px;
+		border-radius: 20px;
 	}
 	.voter2{
 		width : 120px;
 		height : 80px;
 		margin : 10px
+	}
+	#affiche_mdp{
+		width : 80px;
 	}
 }
 @media (orientation : portrait){
@@ -302,7 +309,7 @@ table{
 		width :100%;
 		margin : 0%;
 		font-size : 200%;
-		grid-template-rows : 180px max-content auto 105px;
+		grid-template-rows : 180px max-content auto max-content;
 		height : 100%;
 	}
 	#haut{
@@ -311,6 +318,8 @@ table{
 	}
 	h1{
 		font-size : 80px;
+		height: 180px;
+		background-size: 180px;
 	}
 	h2{
 		height : 59px;
@@ -322,9 +331,10 @@ table{
 		grid-row : 3;
 	}
 	#auth{
-		display : grid;
-		margin-top : 0px;
-		font-size : 31px;
+		font-size: 31px;
+		width: fit-content;
+		margin: 0px;
+		right: 0px;
 	}
 	input{
 		height : 70px;
@@ -341,7 +351,7 @@ table{
 		margin : 15px;
 	}
 	#inputconnect{
-		height : 346px;
+		height : 430px;
 	}
 	#inputinscription{
 		height: 97px;
@@ -363,19 +373,22 @@ table{
 		font-size : 26px;
 	}
 	.liencompte{
-		width : 322px;
-		height : 90px;
+		width : 256px;
+		height : 60px;
 		font-size : 35px;
+		border : 15px ridge;
 	}
 	.flashes{
 		grid-row : 2;
 		font-size : 35px;
 	}
-	.voter{
-		padding-top : 35px;
-		padding-right : 60px;
-		padding-left : 60px;
-		padding-bottom : 30px;
+	#bout{
+		border-width: 15px;
+		border-radius: 20px;
+		padding-top : 15px;
+		padding-right : 45px;
+		padding-left : 45px;
+		padding-bottom : 15px;
 		font-size : 45px;
 		font-weight : bold;
 	}
@@ -383,5 +396,8 @@ table{
 		width : 150px;
 		height : 110px;
 		margin : 15px
+	}
+	#affiche_mdp{
+		width : 65px;
 	}
 }
