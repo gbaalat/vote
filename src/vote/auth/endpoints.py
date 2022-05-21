@@ -15,7 +15,7 @@ auth_bp = Blueprint(
 def inscription():
     """Page d'insciption, l'utilisateur y rentre son adresse mail, envoi du mail quand la méthode est POST"""
     if request.method == "POST":
-        email=request.form["email"]
+        email=str(request.form["email"])
         if test_utilisateur(email):
             public_id = creer_utilisateur(email)
             envoi_mail(
@@ -33,8 +33,9 @@ def inscription():
 @auth_bp.route("/creerMdp/<string:public_id>", methods=["GET", "POST"])
 def creerMdp(public_id):
     """Page dont le lien est contenu dans le mail d'inscription afin de définir le mot de passe du nouveau compte."""
+    public_id = str(public_id) # Validation de base
     if request.method == "POST":
-        if Utilisateur.enregistrerMdp(public_id, request.form["mdp"]):
+        if Utilisateur.enregistrerMdp(public_id, str(request.form["mdp"])):
             return redirect(url_for("auth_bp.connexion"))
         else:
             flash(
@@ -46,8 +47,8 @@ def creerMdp(public_id):
 @auth_bp.route("/connexion", methods=["GET", "POST"])
 def connexion():
     if request.method == "POST":
-        email = request.form["email"]
-        mdp = request.form["mdp"]
+        email = str(request.form["email"])
+        mdp = str(request.form["mdp"])
         email, mdp = email.strip(), mdp.strip()  # enlève les espaces superflus
         u = Utilisateur.query.filter_by(email=email).first()
         if u is None or not (u.verify_email(email) and u.verify_mdp(email, mdp)):
@@ -72,7 +73,7 @@ def deconnexion():
 @auth_bp.route("/motDePasseOublie", methods=["GET", "POST"])
 def motDePasseOublie():
     if request.method == "POST":
-        email = request.form["email"]
+        email = str(request.form["email"])
         email = email.strip()
         u = Utilisateur.query.filter_by(email=email).first()
         if u is None or not(u.verify_email(email)):
