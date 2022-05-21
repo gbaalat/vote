@@ -10,25 +10,25 @@
             <ol>
                 {% if data_cat.top3[1] %}
                 <li>
+                    <p class="total">{{ data_cat.top3[1][0][3] }} votes</span>
                     {% for place1 in data_cat.top3[1] %}
-                    <span class="nomCandidat">{{ place1[1] }} {{ place1[2] }} : </span>
-                    <span class="total">{{ place1[3] }} votes</span>
+                    <span class="nomCandidat">{{ place1[1] }} {{ place1[2] }} </span>
                     {% endfor %}
                 </li>
                 {%endif%}
                 {% if data_cat.top3[2] %}
                 <li>
+                    <p class="total">{{ data_cat.top3[2][0][3] }} votes</span>
                     {% for place2 in data_cat.top3[2] %}
-                    <span class="nomCandidat">{{ place2[1] }} {{ place2[2] }} : </span>
-                    <span class="total">{{ place2[3] }} votes</span>
+                    <span class="nomCandidat">{{ place2[1] }} {{ place2[2] }} </span>
                     {% endfor %}
                 </li>
                 {%endif%}
                 {% if data_cat.top3[3] %}
                 <li>
+                    <p class="total">{{ data_cat.top3[3][0][3] }} votes</span>
                     {% for place3 in data_cat.top3[3] %}
-                    <span class="nomCandidat">{{ place3[1] }} {{ place3[2] }} : </span>
-                    <span class="total">{{ place3[3] }} votes</span>
+                    <span class="nomCandidat">{{ place3[1] }} {{ place3[2] }} </span>
                     {% endfor %}
                 </li>
                 {%endif%}
