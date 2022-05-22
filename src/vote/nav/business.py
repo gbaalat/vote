@@ -12,30 +12,30 @@ def top3(genre, niveau):
         .join(Categorie, Categorie.id == Vote.id_categorie)
         .filter(and_(Categorie.genre == genre, Categorie.niveau == niveau))
         .group_by(Candidat.id)
-        .order_by(func.count().desc())
+        .order_by(func.count().desc(), Candidat.nom)
     )
     classement = q.all()
-    max = len(classement)
+    maximus = min(3, len(classement))
     podium = {}
     i = 0
-    if i < max:
+    if i < maximus:
         podium[1] = [classement[0]]
         i += 1
-        while i < max and classement[i][3] == classement[i-1][3]:
+        while i < maximus and classement[i][3] == classement[i-1][3]:
             podium[1].append(classement[i])
             i += 1
         # gestion 2ème place(s)
-        if i < max and i < 3:
+        if i < maximus:
             podium[2] = [classement[i]]
             i += 1
-            while i < max and classement[i][3] == classement[i-1][3]:
+            while i < maximus and classement[i][3] == classement[i-1][3]:
                 podium[2].append(classement[i])
                 i += 1
         # gestion 3ème place(s)
-        if i < max and i < 3:
+        if i < maximus:
             podium[3] = [classement[i]]
             i += 1
-            while i < max and classement[i][3] == classement[i-1][3]:
+            while i < maximus and classement[i][3] == classement[i-1][3]:
                 podium[3].append(classement[i])
                 i += 1
     return podium
