@@ -414,4 +414,31 @@ table{
 	#affiche_mdp{
 		width : 65px;
 	}
+	.equipe {
+		grid-template-columns: 100%
+	}
+	.one {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.two {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	.three {
+		grid-column: 1;
+		grid-row: 3;
+	}
+	.four {
+		grid-column: 1;
+		grid-row: 4;
+	}
+	.five {
+		grid-column: 1;
+		grid-row: 5;
+	}
+	.six {
+		grid-column: 1;
+		grid-row: 6;
+	}
 }

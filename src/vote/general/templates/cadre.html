@@ -15,7 +15,7 @@
 			{% if session['id'] %}
 			<a href="{{ url_for('auth_bp.deconnexion') }}" class="liencompte">Déconnexion</a>
 			{% else %}
-			<a href="{{ url_for('auth_bp.connexion') }}" class="liencompte">Se connecter</a><br>
+			<a href="{{ url_for('auth_bp.connexion') }}" class="liencompte">Se connecter</a>
 			<a href="{{ url_for('auth_bp.inscription') }}" class="liencompte">S'inscrire</a>
 			{% endif %}
 		</h3>
