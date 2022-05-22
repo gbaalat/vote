@@ -18,21 +18,21 @@ def top3(genre, niveau):
     max = len(classement)
     podium = {}
     i = 0
-    if i < max and classement[0][3] >= 3:
+    if i < max:
         podium[1] = [classement[0]]
         i += 1
         while i < max and classement[i][3] == classement[i-1][3]:
             podium[1].append(classement[i])
             i += 1
         # gestion 2ème place(s)
-        if i < max and i <= 3:
+        if i < max and i < 3:
             podium[2] = [classement[i]]
             i += 1
             while i < max and classement[i][3] == classement[i-1][3]:
                 podium[2].append(classement[i])
                 i += 1
         # gestion 3ème place(s)
-        if i < max and i <= 3:
+        if i < max and i < 3:
             podium[3] = [classement[i]]
             i += 1
             while i < max and classement[i][3] == classement[i-1][3]:

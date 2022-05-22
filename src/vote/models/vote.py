@@ -7,7 +7,7 @@ from vote import db
 
 class Vote(db.Model):
     """Modèle vote pour la base de données"""
-
+    __table_args__ = (db.UniqueConstraint('id_user', 'id_categorie'),)
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     id_user = db.Column(db.Integer, db.ForeignKey("utilisateur.id"), nullable=False)
     id_candidat = db.Column(db.Integer, db.ForeignKey("candidat.id"), nullable=False)

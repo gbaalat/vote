@@ -1,0 +1,21 @@
+INSERT INTO utilisateur (id, email, mdp) VALUES (1, 'test1@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (2, 'test2@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (3, 'test3@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (4, 'test4@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (5, 'test5@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (6, 'test6@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (7, 'test7@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (8, 'test8@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (9, 'test9@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (10, 'test10@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (11, 'test11@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (12, 'test12@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (13, 'test13@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (14, 'test14@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (15, 'test15@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (16, 'test16@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (17, 'test17@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (18, 'test18@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (19, 'test19@mail.fr', '123');
+INSERT INTO utilisateur (id, email, mdp) VALUES (20, 'test20@mail.fr', '123');
+
