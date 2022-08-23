@@ -2,7 +2,7 @@
 
 vote en ligne : projet de terminale NSI à l'Immaculée Conception de Pau
 
-## AVANT DE DEVELOPPER
+## AVANT DE DEVELOPPER 
 
  * ouvrir un terminal et se placer à la racine du projet avec `cd`
  * lancer l'environnement virtuel `source venv/bin/activate`
